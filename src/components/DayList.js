@@ -19,6 +19,6 @@ return(
     <ul>
      {dayListItems}
      
-  </ul>
+    </ul>
   );
 }  
