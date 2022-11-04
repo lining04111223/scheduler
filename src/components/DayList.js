@@ -8,8 +8,8 @@ return(
       key={item.id}
       name={item.name} 
       spots={item.spots} 
-      selected={item.name === props.day}
-      setDay={props.setDay}  
+      selected={item.name === props.value}
+      setDay={props.onChange}  
     />
 )
 });
