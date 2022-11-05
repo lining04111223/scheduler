@@ -64,7 +64,7 @@ export default function Application(props) {
     console.log(testURL);
     axios.get(testURL).then(response => {
       console.log(response);
-      setDays([...response])
+      setDays([...response.data])
     })
     
     ;
