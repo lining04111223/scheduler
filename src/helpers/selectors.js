@@ -1,6 +1,5 @@
 export function getAppointmentsForDay(state, day) {
   const filteredAppoint = state.days.filter(days => days.name === day);
-  console.log(filteredAppoint);
 
   if (state.days.length === 0 || filteredAppoint[0] === undefined) {
     return [];
@@ -21,4 +20,14 @@ export function getInterview(state, interview){
       return interviewerObj;
   }
   return null
+}
+
+export function getInterviewersForDay(state, day) {
+  const filteredInterviewers = state.days.filter(days => days.name === day);
+
+  if (state.days.length === 0 || filteredInterviewers[0] === undefined) {
+    return [];
+  }
+  console.log(filteredInterviewers[0].interviewers.map(ID => state.interviewers[ID] ));
+  return filteredInterviewers[0].interviewers.map(ID => state.interviewers[ID] )
 }
