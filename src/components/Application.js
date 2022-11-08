@@ -28,10 +28,20 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-    setState (
+    
+
+   return axios.put(`/api/appointments/${id}`, appointment)
+ 
+   .then(() => {
+      setState (
       {...state,
-        appointments});
-  }
+        appointments})
+  
+   });
+
+  };
+
+
  
   const appoint = dailyAppointments.map((item) =>{
     const interview = getInterview(state, item.interview);
