@@ -52,6 +52,7 @@ export default function Application(props) {
        {...state,
          appointments})
     })
+    
   };
 
 
