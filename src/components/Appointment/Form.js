@@ -16,8 +16,8 @@ console.log("name",props.name);
     reset();
     props.onCancel();
   };
-const save=(event) =>{
-  event.preventDefault();
+const save=() =>{
+
   validate();
 
 }
@@ -39,7 +39,7 @@ function validate() {
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
-        <form autoComplete="off" onSubmit={save}>
+        <form autoComplete="off" onSubmit={(e) => e.preventDefault()}>
           <input
             className="appointment__create-input text--semi-bold"
             name="name"

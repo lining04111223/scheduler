@@ -1,5 +1,6 @@
 //need React.createElement
 import React from "react";
+import { fireEvent,waitForElement } from "@testing-library/react";
 
 //import helper functions from the react-testing-library
 import { render, cleanup } from "@testing-library/react";
@@ -10,6 +11,12 @@ import Application from "components/Application";
 afterEach(cleanup);
 
 //A test that renders a React Component
-it("renders without crashing", () => {
-  render(<Application />);
+it("changes the schedule when a new day is selected", async () => {
+  const { getByText } = render(<Application />);
+
+  await waitForElement(() => getByText("Monday"));
+
+  fireEvent.click(getByText("Tuesday"));
+
+  expect(getByText("Leopold Silvers")).toBeInTheDocument();
 });
