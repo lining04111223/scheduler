@@ -1,25 +1,21 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "components/InterviewerList.scss";
 import InterviewerListItem from "./InterviewerListItem";
 
 
 export default function InterviewerList(props) {
   const Interviewer = props.interviewers.map((item) =>{
-return(
-  <InterviewerListItem 
+    return(
+    <InterviewerListItem 
       key={item.id}
-
       name={item.name} 
       avatar={item.avatar} 
       selected={item.id === props.value}
       setInterviewer={() => props.onChange(item.id)}  
     />
-)
-
+    )
   });
-
-
-
 
   return (
     <section className="interviewers">
@@ -27,7 +23,9 @@ return(
       <ul className="interviewers__list">{Interviewer}</ul>
     </section>
   );
+};
 
-
-
-}
+//PropTypes test
+InterviewerList.propTypes = {
+  interviewers: PropTypes.array.isRequired
+};

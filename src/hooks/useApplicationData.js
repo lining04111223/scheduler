@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-
+//custom hook
 export default function useApplicationData(){
 
 const [state, setState] = useState({
@@ -14,6 +13,27 @@ const [state, setState] = useState({
 
 const setDay = day => setState({ ...state, day });
 
+//upadate sports of everyday function
+function updateSpots(state, appointments){
+  const newdays =state.days.map((day) => { 
+    if (day.name === state.day) {
+      const newday ={
+          ...day, 
+          spots: day.appointments 
+          .map((id) => (appointments[id])) 
+          .filter(({ interview }) => { 
+            return !interview; 
+          }).length 
+      };
+      return newday;
+    }
+    return day; 
+  });
+  
+ return newdays;
+};
+
+//bookinterview function
 function bookInterview(id, interview) {
   console.log(id, interview);
   const appointment = {
@@ -27,12 +47,16 @@ function bookInterview(id, interview) {
   
  return axios.put(`/api/appointments/${id}`, appointment)
  .then(() => {
+   const days =updateSpots(state, appointments);
     setState (
     {...state,
-      appointments})
+      appointments,
+      days
+    })
  })
 };
 
+//cancel an existing interview function
 function cancelInterview(id) {
   const appointment = {
     ...state.appointments[id],
@@ -44,13 +68,17 @@ function cancelInterview(id) {
   };
   return axios.delete(`/api/appointments/${id}`)
   .then(() => {
+    const days =updateSpots(state, appointments);
      setState (
      {...state,
-       appointments})
+       appointments,
+       days
+      })
   })
-  
 };
 
+
+//get data from api
 useEffect(() => {
   Promise.all([
     axios.get('/api/days'),
@@ -61,5 +89,5 @@ useEffect(() => {
   });
 }, []);
 
-return { state, setDay, bookInterview, cancelInterview };
+return { state, setDay, bookInterview, cancelInterview};
 }
