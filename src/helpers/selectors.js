@@ -9,7 +9,6 @@ export function getAppointmentsForDay(state, day) {
 
 export function getInterview(state, interview){
   if (interview) {
-    console.log(interview);
      const interviewerObj = { 
        student: interview.student,
        interviewer: {
@@ -29,6 +28,5 @@ export function getInterviewersForDay(state, day) {
   if (state.days.length === 0 || filteredInterviewers[0] === undefined) {
     return [];
   }
-  console.log(filteredInterviewers[0].interviewers.map(ID => state.interviewers[ID] ));
   return filteredInterviewers[0].interviewers.map(ID => state.interviewers[ID] )
 }
