@@ -3,11 +3,10 @@ import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
 export default function Form(props) {
-  const [name, setName] = useState(props.student || props.name||"");
-  const [interviewer, setInterviewer] = useState(props.interviewer ?props.interviewer.id : null);
+  const [name, setName] = useState(props.student||"");
+  const [interviewer, setInterviewer] = useState(props.interviewer|| null);
   const [error, setError] = useState("");
 
-console.log("name",props.name);
   const reset=() => {
     setName("");
     setInterviewer(null);
@@ -31,7 +30,7 @@ function validate() {
     setError("Please select an interviewer");
     return;
   }
-  console.log(interviewer);
+  setError("");
   props.onSave(name, interviewer);
 }
 
