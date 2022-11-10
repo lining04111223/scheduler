@@ -58,7 +58,7 @@ Number of available spots are updated when an interview is booked or canceled
 
 ![Screenshot 2](https://github.com/lining04111223/scheduler/blob/master/docs/different_mode.png?raw=true)
 
-### Error
+### Error Status
 
 ![Screenshot 3](https://github.com/lining04111223/scheduler/blob/master/docs/error.png?raw=true)
 
@@ -95,6 +95,5 @@ npm run storybook
 
 ## The API Server
 
-```sh
-Fork and clone the [scheduler-api](https://github.com/lighthouse-labs/scheduler-api) into a new directory (NOT within our current scheduler directory) on your host machine (not in our Vagrant machine).
-```
+Fork and clone the 
+- [scheduler-api](https://github.com/lighthouse-labs/scheduler-api) into a new directory (NOT within our current scheduler directory) on your host machine (not in our Vagrant machine).
