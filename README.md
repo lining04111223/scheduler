@@ -46,24 +46,34 @@ Number of available spots are updated when an interview is booked or canceled
 
 # Screenshots
 
-### Component Tree of the App
-
-![Component Tree of the Scheduler App](https://github.com/)
-
 ### Component Flow of the App
 
-![Component Flow](https://github.com/)
+![Component Flow](https://github.com/lining04111223/scheduler/blob/master/docs/scheduler_flow_chart.png?raw=true)
 
 ### Main View
 
-![Screenshot 1](https://)
+![Screenshot 1](https://github.com/lining04111223/scheduler/blob/master/docs/main_menu.png?raw=true)
+
+### Different Mode
+
+![Screenshot 2](https://github.com/lining04111223/scheduler/blob/master/docs/different_mode.png?raw=true)
+
+### Error
+
+![Screenshot 3](https://github.com/lining04111223/scheduler/blob/master/docs/error.png?raw=true)
+
+### Storybook
+
+![Screenshot 4](https://github.com/lining04111223/scheduler/blob/master/docs/storybook.png?raw=true)
 
 
 # Setup Instructions:
 
 ## Setup
 
+```sh
 Install dependencies with `npm install`.
+```
 
 ## Running Webpack Development Server
 
