@@ -4,6 +4,7 @@ export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]); 
   
+  //mode transition function
   function transition (initial, replace = false) {
     const copyHistory = [...history];
     if(replace){
@@ -17,6 +18,7 @@ export default function useVisualMode(initial) {
     }
   };
 
+  //mode back function
   function back(){
     const copyHistory = [...history];
     if(copyHistory.length === 1) return;
@@ -25,6 +27,5 @@ export default function useVisualMode(initial) {
       setHistory(copyHistory);
   }
   
-
   return { mode, transition, back };
-}
+};

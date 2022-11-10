@@ -5,7 +5,7 @@ export function getAppointmentsForDay(state, day) {
     return [];
   }
   return filteredAppoint[0].appointments.map(ID => state.appointments[ID] )
-}
+};
 
 export function getInterview(state, interview){
   if (interview) {
@@ -17,10 +17,10 @@ export function getInterview(state, interview){
         avatar: state.interviewers[interview.interviewer].avatar
       }
     }
-      return interviewerObj;
+    return interviewerObj;
   }
   return null
-}
+};
 
 export function getInterviewersForDay(state, day) {
   const filteredInterviewers = state.days.filter(days => days.name === day);
@@ -29,4 +29,4 @@ export function getInterviewersForDay(state, day) {
     return [];
   }
   return filteredInterviewers[0].interviewers.map(ID => state.interviewers[ID] )
-}
+};

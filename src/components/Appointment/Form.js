@@ -11,28 +11,28 @@ export default function Form(props) {
     setName("");
     setInterviewer(null);
   };
+
   const cancel=() => {
     reset();
     props.onCancel();
   };
-const save=() =>{
-
+   
+  const save=() =>{
   validate();
+  };
 
-}
-
-function validate() {
-  if (name === "") {
-    setError("Student name cannot be blank");
-    return;
-  }
-  if (interviewer === null) {
-    setError("Please select an interviewer");
-    return;
-  }
-  setError("");
-  props.onSave(name, interviewer);
-}
+  function validate() {
+    if (name === "") {
+      setError("Student name cannot be blank");
+      return;
+    };
+    if (interviewer === null) {
+      setError("Please select an interviewer");
+      return;
+    };
+    setError("");
+    props.onSave(name, interviewer);
+  };
 
 
   return (
@@ -64,4 +64,4 @@ function validate() {
       </section>
     </main>
   );
-}
+};

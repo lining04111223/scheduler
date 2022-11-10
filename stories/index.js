@@ -35,7 +35,6 @@ storiesOf("Button", module)
     </Button>
   ));
 
-
   //DayListItem story
   storiesOf("DayListItem", module) //Initiates Storybook and registers our DayListItem component
   .addParameters({
@@ -82,7 +81,7 @@ storiesOf("Button", module)
         <DayList days={days} value={"Wednesday"} onChange={action("setDay")} />
     ));
 
-
+    
      //InterviewerListItem story 
     const interviewer = {
       id: 1,
@@ -220,7 +219,7 @@ storiesOf("Button", module)
           />
           <Appointment time="5pm" />
         </Fragment>
-      ))
+      ));
 
 
 

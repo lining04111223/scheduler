@@ -15,10 +15,7 @@ describe("Appointment", () => {
   });
 
   it("does something it is supposed to do", () => {
-    // ...
+    expect(null).toBeNull();
   });
 
-  it("does something else it is supposed to do", () => {
-    // ...
-  });
 });

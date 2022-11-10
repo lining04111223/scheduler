@@ -21,7 +21,6 @@ export default function Application(props) {
 
   const appoint = dailyAppointments.map((item) =>{
     const interview = getInterview(state, item.interview);
-
       return(
       <Appointment
       key = {item.id}
@@ -45,12 +44,10 @@ export default function Application(props) {
           />
           <hr className="sidebar__separator sidebar--centered" />
           <nav className="sidebar__menu">
-         
               <DayList
                 days={state.days}
                 value={state.day}
                 onChange={setDay}
-               
               />
           </nav>
           <img
@@ -65,4 +62,4 @@ export default function Application(props) {
       </section>
     </main>
   );
-}
+};
